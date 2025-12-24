@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Энигмия | Дом-Скульптура в Сердце Москвы</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#050a14', // Deep Midnight Blue
+              secondary: '#0a1128', // Slightly lighter Dark Blue
+              accent: '#f8f9fa', // Silver/Platinum (Replacing Gold)
+              surface: '#070d1a', 
+              muted: '#8e9aaf',
+              border: 'rgba(255,255,255,0.08)'
+            },
+            fontFamily: {
+              serif: ['Playfair Display', 'serif'],
+              sans: ['Montserrat', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; /* Отступ для фиксированной навигации */
+      }
+      body {
+        background-color: #050a14;
+        color: #f8f9fa;
+        font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-serif {
+        font-family: 'Playfair Display', serif;
+      }
+      
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-up {
+        animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .delay-200 { animation-delay: 0.2s; }
+      .delay-400 { animation-delay: 0.4s; }
+
+      .hero-gradient {
+        background: linear-gradient(to bottom, rgba(5,10,20,0.8) 0%, rgba(5,10,20,0.1) 50%, rgba(5,10,20,0.9) 100%);
+      }
+
+      .hover-link {
+        position: relative;
+        display: inline-block;
+      }
+      .hover-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: #f8f9fa;
+        transition: width 0.4s ease;
+      }
+      .hover-link:hover::after {
+        width: 100%;
+      }
+
+      section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+      
+      @media (max-width: 768px) {
+        section {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+      }
+
+      /* Custom glassmorphism for dark blue theme */
+      .glass-nav {
+        background: rgba(5, 10, 20, 0.8);
+        backdrop-filter: saturate(180%) blur(15px);
+        -webkit-backdrop-filter: saturate(180%) blur(15px);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
